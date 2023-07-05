@@ -27,7 +27,7 @@ typedef struct {
 } BatteryCharacter;
 
 std::pair<int,int> BoundValues;
-std::map<CoolingType, BoundValues> CoolingBoundValue = { {PASSIVE_COOLING, (0,35)}};
+std::map<CoolingType, BoundValues> CoolingBoundValue = { {PASSIVE_COOLING, <0,35>}};
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit);
 BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC);
