@@ -29,8 +29,8 @@ typedef struct {
 std::pair<int,int> BoundValues;
 std::map<CoolingType, BoundValues> CoolingBoundValue = 
 { 
-std::make_pair( PASSIVE_COOLING, std::make_pair(10,10)),
-std::make_pair( HI_ACTIVE_COOLING, std::make_pair(10,10))
+{std::make_pair( PASSIVE_COOLING, std::make_pair(10,10))},
+{std::make_pair( HI_ACTIVE_COOLING, std::make_pair(10,10))}
 };
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit);
