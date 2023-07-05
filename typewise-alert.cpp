@@ -1,4 +1,5 @@
 #include "typewise-alert.h"
+#include <map>
 #include <stdio.h>
 
 std::map<CoolingType, BoundValues> CoolingBoundValue = 
