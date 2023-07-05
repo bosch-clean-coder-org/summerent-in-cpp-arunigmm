@@ -1,5 +1,8 @@
 #pragma once
 
+#include <map>
+#include <utility>
+
 typedef enum {
   PASSIVE_COOLING,
   HI_ACTIVE_COOLING,
