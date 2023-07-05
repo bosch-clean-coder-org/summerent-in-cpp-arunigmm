@@ -3,19 +3,22 @@
 #include <map>
 #include <utility>
 
-typedef enum {
+typedef enum 
+{
   PASSIVE_COOLING,
   HI_ACTIVE_COOLING,
   MED_ACTIVE_COOLING
 } CoolingType;
 
-typedef enum {
+typedef enum 
+{
   NORMAL,
   TOO_LOW,
   TOO_HIGH
 } BreachType;
 
-typedef enum {
+typedef enum 
+{
   TO_CONTROLLER,
   TO_EMAIL
 } AlertTarget;
@@ -26,12 +29,7 @@ typedef struct {
   char brand[48];
 } BatteryCharacter;
 
-typedef std::pair<int,int> BoundValues;
-std::map<CoolingType, BoundValues> CoolingBoundValue = 
-{ 
-{std::make_pair( PASSIVE_COOLING, std::make_pair(10,10))},
-{std::make_pair( HI_ACTIVE_COOLING, std::make_pair(10,10))}
-};
+int BoundValues[][] = {(0,45),(0,40)};
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit);
 BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC);
