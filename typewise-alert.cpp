@@ -2,6 +2,8 @@
 #include <map>
 #include <stdio.h>
 
+typedef std::pair<int,int> BoundValues;
+
 std::map<CoolingType, BoundValues> CoolingBoundValue = 
 { 
 {std::make_pair( PASSIVE_COOLING, std::make_pair(10,10))},
