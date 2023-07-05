@@ -1,6 +1,6 @@
 #pragma once
 
-#include <map>
+#include <vector>
 #include <utility>
 
 typedef enum 
@@ -29,7 +29,8 @@ typedef struct {
   char brand[48];
 } BatteryCharacter;
 
-int BoundValues[][] = {(0,45),(0,40)};
+typedef std::pair<int,int> BoundValues;
+std::vector<BoundValues> CoolingBoundVal {{10,30}};
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit);
 BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC);
