@@ -26,7 +26,7 @@ typedef struct {
   char brand[48];
 } BatteryCharacter;
 
-std::pair<int,int> BoundValues;
+typedef std::pair<int,int> BoundValues;
 std::map<CoolingType, BoundValues> CoolingBoundValue = 
 { 
 {std::make_pair( PASSIVE_COOLING, std::make_pair(10,10))},
