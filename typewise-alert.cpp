@@ -6,7 +6,7 @@ BreachType classifyTemperatureBreach(CoolingType coolingType, double temperature
   if(temperatureInC < 0) {
     return TOO_LOW;
   }
-  if(value > coolingType) {
+  if(temperatureInC > coolingType) {
     return TOO_HIGH;
   }
   return NORMAL;
