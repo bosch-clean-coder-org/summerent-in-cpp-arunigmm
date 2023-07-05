@@ -29,7 +29,6 @@ typedef struct {
   char brand[48];
 } BatteryCharacter;
 
-int CoolingBoundValue[3] =  {10,30,40};
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit);
 BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC);
