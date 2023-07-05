@@ -6,7 +6,7 @@ typedef std::pair<int,int> BoundValues;
 
 std::map<CoolingType, BoundValues> CoolingBoundValue = 
 { 
-{std::make_pair( PASSIVE_COOLING, std::make_pair(0,135))},
+{std::make_pair( PASSIVE_COOLING, std::make_pair(0,35))},
 {std::make_pair( HI_ACTIVE_COOLING, std::make_pair(0,45))},
 {std::make_pair( MED_ACTIVE_COOLING, std::make_pair(0,40))}
 };
@@ -25,7 +25,6 @@ BreachType classifyTemperatureBreach(
     CoolingType coolingType, double temperatureInC) 
   {
   BoundValues temp = CoolingBoundValue[coolingType];
-  }
   return inferBreach(temperatureInC, temp.first, temp.second);
 }
 
