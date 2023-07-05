@@ -29,8 +29,7 @@ typedef struct {
   char brand[48];
 } BatteryCharacter;
 
-typedef std::pair<int,int> BoundValues;
-std::vector<BoundValues> CoolingBoundVal {{10,30}};
+int CoolingBoundVal[] =  {{10,30}};
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit);
 BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC);
