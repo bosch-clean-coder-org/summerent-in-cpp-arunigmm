@@ -23,7 +23,7 @@ std::map<BreachType, std::string> breachMessage =
 std::map<AlertTarget, AlertFunction> alertFunctionPtr =
 {
    { std::make_pair(TO_CONTROLLER,  sendToController)},
-   { std::make_pair(TO_EMAIL,       TO_EMAIL)}
+   { std::make_pair(TO_EMAIL,       sendToEmail)}
 };
 
 BreachType inferTemperatureBreach(CoolingType coolingType, double temperatureInC) 
