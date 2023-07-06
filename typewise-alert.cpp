@@ -11,26 +11,24 @@ std::map<CoolingType, BoundValues> CoolingBoundValue =
    {std::make_pair( MED_ACTIVE_COOLING, std::make_pair(0,40))}
 };
 
-BreachType inferBreach(double value, double lowerLimit, double upperLimit) 
-{
-  if(value < lowerLimit) {
-    return TOO_LOW;
-  }
-  if(value > upperLimit) {
-    return TOO_HIGH;
-  }
-  return NORMAL;
-}
 
-BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC) 
+BreachType inferTemperatureBreach(CoolingType coolingType, double temperatureInC) 
 {
-  BoundValues temperatureRange = CoolingBoundValue[coolingType];
-  return inferBreach(temperatureInC, temperatureRange.first, temperatureRange.second);
+   BoundValues temperatureRange = CoolingBoundValue[coolingType];
+   if(temperatureInC < temperatureRange.first) 
+   {
+      return TOO_LOW;
+   }
+   if(temperatureInC > temperatureRange.second) 
+   {
+      return TOO_HIGH;
+   }
+   return NORMAL;
 }
 
 void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) 
 {
-  BreachType breachType = classifyTemperatureBreach(batteryChar.coolingType, temperatureInC);
+  BreachType breachType = inferTemperatureBreach(batteryChar.coolingType, temperatureInC);
   switch(alertTarget) 
   {
     case TO_CONTROLLER:
