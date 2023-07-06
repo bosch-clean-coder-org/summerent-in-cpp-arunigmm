@@ -5,31 +5,31 @@
 
 TEST_CASE("classifyTemperatureBreach for Passive cooling config_Normal") 
 {
-  REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, 10) == NORMAL);
+  REQUIRE(inferTemperatureBreach(PASSIVE_COOLING, 10) == NORMAL);
 }
 
 TEST_CASE("classifyTemperatureBreach for Passive cooling config_High") 
 {
-  REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, 40) == TOO_HIGH);
+  REQUIRE(inferTemperatureBreach(PASSIVE_COOLING, 40) == TOO_HIGH);
 }
 
 TEST_CASE("classifyTemperatureBreach for High active cooling config_Normal") 
 {
-  REQUIRE(classifyTemperatureBreach(HI_ACTIVE_COOLING, 40) == NORMAL);
+  REQUIRE(inferTemperatureBreach(HI_ACTIVE_COOLING, 40) == NORMAL);
 }
 
 TEST_CASE("classifyTemperatureBreach for High active cooling config_High") 
 {
-  REQUIRE(classifyTemperatureBreach(HI_ACTIVE_COOLING, 50) == TOO_HIGH);
+  REQUIRE(inferTemperatureBreach(HI_ACTIVE_COOLING, 50) == TOO_HIGH);
 }
 
 
 TEST_CASE("classifyTemperatureBreach for Mid active cooling config_Normal") 
 {
-  REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, 40) == NORMAL);
+  REQUIRE(inferTemperatureBreach(MED_ACTIVE_COOLING, 40) == NORMAL);
 }
 
 TEST_CASE("classifyTemperatureBreach for Mid active cooling config_High") 
 {
-  REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, 41) == TOO_HIGH);
+  REQUIRE(inferTemperatureBreach(MED_ACTIVE_COOLING, 41) == TOO_HIGH);
 }
