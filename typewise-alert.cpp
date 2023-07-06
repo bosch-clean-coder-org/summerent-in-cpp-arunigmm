@@ -24,8 +24,8 @@ BreachType inferBreach(double value, double lowerLimit, double upperLimit)
 
 BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC) 
 {
-  BoundValues temp = CoolingBoundValue[coolingType];
-  return inferBreach(temperatureInC, temp.first, temp.second);
+  BoundValues temperatureRange = CoolingBoundValue[coolingType];
+  return inferBreach(temperatureInC, temperatureRange.first, temperatureRange.second);
 }
 
 void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) 
