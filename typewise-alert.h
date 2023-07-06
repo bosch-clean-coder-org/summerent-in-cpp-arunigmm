@@ -23,7 +23,8 @@ typedef enum
 } AlertTarget;
 
 
-typedef struct {
+typedef struct 
+{
   CoolingType coolingType;
   char brand[48];
 } BatteryCharacter;
@@ -31,8 +32,6 @@ typedef struct {
 
 BreachType inferTemperatureBreach(CoolingType coolingType, double temperatureInC);
 
-
 void checkAndAlert( AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
-
 void sendToController(BreachType breachType);
 void sendToEmail(BreachType breachType);
