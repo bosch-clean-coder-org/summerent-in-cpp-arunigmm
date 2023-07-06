@@ -1,4 +1,5 @@
 #include "typewise-alert.h"
+#include <string>
 #include <map>
 #include <stdio.h>
 
