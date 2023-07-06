@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 typedef std::pair<int,int> BoundValues;
+typedef void (*AlertFunction)(BreachType);
 
 std::map<CoolingType, BoundValues> coolingBoundValue = 
 { 
@@ -18,8 +19,6 @@ std::map<BreachType, std::string> breachMessage =
    { std::make_pair(TOO_LOW,   "Hi, the temperature is Too Low")},
    { std::make_pair(TOO_HIGH,  "Hi, the temperature is Too High")}
 };
-
-typedef void (*AlertFunction)(BreachType);
 
 std::map<AlertTarget, AlertFunction> alertFunctionPtr =
 {
