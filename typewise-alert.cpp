@@ -23,8 +23,8 @@ typedef void (*AlertFunction)(BreachType);
 
 std::map<AlertTarget, AlertFunction> alertFunctionPtr =
 {
-   { std::make_pair(TO_CONTROLLER,   sendToController)},
-   { std::make_pair(TO_EMAIL,   sendToController)}
+   { std::make_pair(TO_CONTROLLER,  sendToController)},
+   { std::make_pair(TO_EMAIL,       TO_EMAIL)}
 };
 
 BreachType inferTemperatureBreach(CoolingType coolingType, double temperatureInC) 
