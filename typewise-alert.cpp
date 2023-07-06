@@ -19,7 +19,9 @@ std::map<BreachType, std::string> breachMessage =
    { std::make_pair(TOO_HIGH,  "Hi, the temperature is Too High")}
 };
 
-std::map<AlertTarget, void (*func)(BreachType)> alertFunction =
+typedef void (*AlertFunction)(BreachType);
+
+std::map<AlertTarget, AlertFunction> alertFunctionPtr =
 {
    { std::make_pair(TO_CONTROLLER,   sendToController)},
    { std::make_pair(TO_EMAIL,   sendToController)}
@@ -42,7 +44,7 @@ BreachType inferTemperatureBreach(CoolingType coolingType, double temperatureInC
 void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) 
 {
    BreachType breachType = inferTemperatureBreach(batteryChar.coolingType, temperatureInC);
-   alertFunction[alertTarget](breachType);
+   alertFunctionPtr[alertTarget](breachType);
 }
 
 void sendToController(BreachType breachType)
